@@ -15,7 +15,9 @@ export default function Comparison() {
         }
     }, [userData, userToCompareData, router]);
 
-
+    if (!userData || !userToCompareData) {
+        return <div className="flex min-h-screen items-center justify-center"> <p className="text-center text-gray-500">Loading...</p></div>;
+    }
     return (
         <main className="flex min-h-screen flex-col items-center  p-6">
             <h3 className="text-base font-semibold mb-2">GitHub User Comparison</h3>
@@ -28,6 +30,7 @@ export default function Comparison() {
                             width={80}
                             height={80}
                             className="rounded-full mb-4 h-20 w-20 object-cover"
+                            alt='user avatar'
                         />
                         <div className='text-start ' >
                             <h2 className="text-xl font-bold">{userData.name || userData.login}</h2>
@@ -49,6 +52,7 @@ export default function Comparison() {
                             width={80}
                             height={80}
                             className="rounded-full mb-4 h-20 w-20 object-cover"
+                            alt='user avatar'
                         />
                         <div className='text-start ' >
                             <h2 className="text-xl font-bold">{userToCompareData.name || userToCompareData.login}</h2>
