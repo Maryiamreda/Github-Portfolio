@@ -4,7 +4,6 @@ import Image from 'next/image';
 import SearchIcon from './Search.svg';
 import StarIcon from './Star.svg';
 import { useEffect, useState } from 'react';
-import Chart from 'chart.js/auto';
 
 export default function Home() {
   const [user, setUser] = useState('')
@@ -129,7 +128,7 @@ export default function Home() {
             {repos.length > 0 && (
               <div className="bg-gray-50 p-4 rounded-lg mt-4 mb-4">
                 <h3 className="text-base font-semibold mb-2">Repository Summary</h3>
-                <div className="grid grid-cols-2 gap-2 text-sm">
+                <div className="grid md:grid-cols-2 gap-2 text-sm">
                   <div className="bg-white p-2 rounded shadow-sm">
                     <p className="font-medium">Total Repos</p>
                     <p className="text-xl font-bold">{repos.length}</p>
