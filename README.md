@@ -2,6 +2,10 @@
 
 React project built with Next.js and Tailwind CSS for an Integration assignment.
 
+# Live Demo
+```bash
+https://github-portfolio-lyart-alpha.vercel.app/
+```
 ## Setup Instructions
 
 ### Prerequisites
@@ -12,7 +16,7 @@ React project built with Next.js and Tailwind CSS for an Integration assignment.
 1. Clone the repository
 
 ```bash
-git clone https://github.com/Maryiamreda/Frontend-Assessment.git
+git clone https://github.com/Maryiamreda/Github-Portfolio.git
 cd Assessment
 ```
 
