@@ -137,13 +137,13 @@ export default function Home() {
     <main className=" flex min-h-screen flex-col items-center justify-between pt-6">
       <div className="flex flex-col gap-6 w-full max-w-md">
         <div>
-          <form onSubmit={(e) => { e.preventDefault(); handleSearch(); }} className='flex bg-gray-100 rounded p-4 justify-between items-center shadow-sm'>
+          <form onSubmit={(e) => { e.preventDefault(); handleSearch(); }} className='flex bg-gray-100 rounded p-4 items-center shadow-sm'>
             <input
               type='text'
               placeholder='Who are you looking for ?'
               value={user}
               onChange={(e) => setUser(e.target.value)}
-              className='text-xs focus:outline-0'
+              className='text-xs focus:outline-0 w-[95%]'
             />
             <Image
               src={SearchIcon}
@@ -176,17 +176,16 @@ export default function Home() {
 
 
 
-
-
         {compare && <div>
-          <form onSubmit={(e) => { e.preventDefault(); handleCompare(); }} className='flex bg-gray-100 rounded p-4 justify-between items-center shadow-sm'>
+          <form onSubmit={(e) => { e.preventDefault(); handleCompare(); }}
+            className='flex bg-gray-100 rounded p-4 j items-center shadow-sm'>
 
             <input
               type='text'
               placeholder='Compare With'
               value={usertocompare}
               onChange={(e) => setUsertocompare(e.target.value)}
-              className='text-xs focus:outline-0'
+              className='text-xs focus:outline-0 w-[95%]'
             />
             <Image
               src={SearchIcon}
@@ -243,7 +242,7 @@ export default function Home() {
               </div>
             </div>
             {repos.length > 0 && (
-              <div className="bg-gray-50 p-4 rounded-lg mt-4 mb-4">
+              <div className="bg-gray-50 p-4 rounded-lg mt-4 mb-4 text-black">
                 <h3 className="text-base font-semibold mb-2">Repository Summary</h3>
                 <div className="grid md:grid-cols-2 gap-2 text-sm">
                   <div className="bg-white p-2 rounded shadow-sm">
