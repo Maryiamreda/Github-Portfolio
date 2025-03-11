@@ -2,36 +2,19 @@
 
 import { useUserContext } from '../context/UserContext';
 import { useRouter } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 export default function Comparison() {
     const { comparisonData } = useUserContext();
     const router = useRouter();
     const { userData, userToCompareData } = comparisonData;
-    const [error, setError] = useState(null);
-    const [repos, setRepos] = useState([])
+
     useEffect(() => {
         if (!userData || !userToCompareData) {
             router.push('/');
         }
     }, [userData, userToCompareData, router]);
 
-
-    async function getRepo(name) {
-        try {
-            const reposres = await fetch(`https://api.github.com/users/${name}/repos?sort=updated&per_page=1000`, {
-                next: { revalidate: 0 }
-            });
-
-            if (reposres.ok) {
-                const reposdata = await reposres.json();
-                setRepos(reposdata);
-            }
-        } catch (err) {
-            setError(err.message);
-            setRepos([]);
-        }
-    }
 
     return (
         <main className="flex min-h-screen flex-col items-center  p-6">
